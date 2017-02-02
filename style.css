@@ -1,0 +1,313 @@
+html {
+	background: linear-gradient(45deg, currentColor 25%,  transparent 25%, transparent 75%, currentColor 75%, currentColor), 
+	            linear-gradient(45deg, currentColor 25%,  transparent  25%,  transparent 75%, currentColor 75%, currentColor) 10px 10px;
+	background-color: #eee;
+	background-size:20px 20px;
+	color: #bbb;
+}
+
+body {
+	margin: auto;
+	text-align: center;
+	color: black;
+	height:65em;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+body > h1 {
+	margin-bottom: 1.3em;
+	letter-spacing: -1px;
+	line-height: 1.3;
+}
+
+    body > h1 a {
+        display: flex;
+    }
+
+        body > h1 div {
+            flex: 1 1 0px;
+        }
+
+        body > h1 div:first-child {
+            text-align: right;
+        }
+
+        body > h1 div:last-child {
+            text-align: left;
+        }
+
+            body > h1 div > * {
+                padding: .1em .4em;
+            }
+
+            body > h1 span {
+                background: black;
+                color: white;
+            }
+
+            body > h1 strong {
+                background: white;
+                color: black;
+            }
+
+label {
+	position: absolute;
+}
+
+	label > span {
+		display: inline-block;
+		padding: .2em .5em;
+		border-radius: .3em .3em 0 0;
+		background: rgba(0,0,0,.5);
+		color: white;
+		text-shadow: 0 -.1em .1em black;
+		font-size: 60%;
+		font-weight: bold;
+	}
+
+	label.background {
+		right: 50%;
+		text-align: left;
+	}
+	
+		label.background > span {
+			margin-left: 1em;
+		}
+	
+	label.foreground {
+		left: 50%;
+		text-align: right;
+	}
+	
+		label.foreground > span {
+			margin-right: 1em;
+		}
+
+
+	input {
+		display: block;
+		min-width: 8em;
+		width: 8em;
+		padding: .2em .5em .1em;
+		margin-top: -.1em;
+		border: thin solid rgba(0,0,0,.3);
+		background: hsla(0,0%,90%,.9);
+		color: #333;
+		text-shadow: 0 .05em 1px white;
+		font: 150% Consolas, Monaco, 'Andale Mono', 'Lucida Console', monospace;
+		box-shadow: .05em .1em .2em rgba(0,0,0,.4) inset;
+		text-align:center;
+	}
+	
+	
+output {
+	display: block;
+	position: relative;
+	width: 3em;
+	padding: 1em 0;
+	margin: -.1em auto 0;
+	background: hsl(0, 0%, 50%) -35% -35%;
+	background-size: 142% 142%;
+	text-align: center;
+	color: white;
+	font: bold 170%/1 'Arial Unicode MS', sans-serif;
+	border-radius: 50%;
+	margin-top:4em;
+	box-shadow: 0px 0px 8px #FB8C00;
+}
+output:hover,output:focus{
+	box-shadow: 0px 0px 20px #FB8C00;
+}
+
+	output strong {
+		color: white !important;
+		font-size:15pt;
+		font-weight:500;
+	}
+	
+		output .error {
+			position: absolute;
+			bottom: 1em;
+			left: 0;
+			right: 0;
+			opacity: .8;
+			text-align: center;
+			font-size: 45%;
+			letter-spacing: normal;
+		}
+	
+.color-display {
+	bottom: 0;
+	z-index: -1;
+	padding: 2em 1em 1em;
+}
+	
+	.color-display h1,
+	.color-display p {
+		margin-top: 0;
+		direction: ltr;
+	}
+	
+	.color-display p {
+		font-size: 14pt;
+	}
+	
+	.color-display a:hover {
+		color: black;
+		text-decoration: underline;
+	}
+
+	#backgroundDisplay {
+		margin-top:2em;
+		left: 0;
+		right: 50%;
+		text-align: center;
+		direction: rtl;
+		overflow: auto;
+		width:80%;
+		height:38em;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	
+	#foregroundDisplay {
+		left: 50%;
+		right: 0;
+		text-align: left;
+	}
+	
+#results {
+	position: absolute;
+	left: 50%;
+	width: 15em;
+	padding: 1em 1.5em;
+	border: 1px solid gray;
+	border-radius: .5em;
+	margin-left: -9em;
+	margin-top: .7em;
+	box-shadow: .1em .1em .8em -.1em black;
+	background: white;
+	text-align: left;
+	font-size: 100%;
+	transform: scale(0);
+	transform-origin: top;
+	transition: .4s transform;
+}
+
+output:focus + #results,
+output:hover + #results {
+	transform: none;
+	transition-timing-function: cubic-bezier(.5,0,.7,1.8);
+}
+	
+	#results:before,
+	#results:after {
+		content: '';
+		position: absolute;
+		top: -15px;
+		left: 50%;
+		width: 0;
+		height: 0;
+		
+	}
+	
+	#results:before {
+		margin-left: -17px;
+		margin-top: -2px;
+		border: 17px solid transparent;
+		border-top-width: 0;
+		border-bottom-color: gray;
+	}
+	
+	#results:after {
+		margin-left: -16px;
+		margin-top: -1px;
+		border: 16px solid transparent;
+		border-top-width: 0;
+		border-bottom-color: white;
+	}
+	
+	#results p,
+	#results ul {
+		margin: 0;
+	}
+	
+	#results ul {
+		padding-left: 1em;
+	}
+	
+button {
+	padding: .2em .5em .1em;
+	margin-top: .2em;
+	border: 1px solid rgba(0,0,0,.5);
+	border-radius: .3em;
+	box-shadow: 0 1px white inset,
+				0 .6em hsla(0,0%,100%,.2) inset,
+				-.1em -.1em .5em rgba(0,0,0,.4) inset,
+	            0 .3em .2em -.3em rgba(0,0,0,.5);
+	background: white;
+	background: hsla(0,0%,80%,.6);
+	cursor: pointer;
+	color: black;
+	text-shadow: 0 1px 1px white;
+	font: inherit;
+	font-size: 85%;
+}
+
+	button:hover,
+	button:focus {
+		background: hsla(0,0%,100%,.6);
+		text-decoration: underline;
+	}
+	
+	button:active {
+		box-shadow: 0 1px hsla(0, 0%, 100%, .3),
+		            0 1px .3em .05em rgba(0,0,0,.6) inset;
+	}
+	
+.twitter-share-button {
+	position: absolute !important;
+	top: 10px;
+	right: 10px;
+}
+
+canvas {
+	display: none;
+}
+#px28{
+	font-size:28pt;
+}
+#px24{
+	font-size:24pt;
+}
+#px20{
+	font-size:20pt;
+}
+#px18{
+	font-size:18pt;
+}
+#px14{
+	font-size:14pt;
+}
+#px12{
+	font-size:12pt;
+}
+#px10{
+	font-size:10pt;
+}
+#shape{
+	margin-top:2em;
+	margin-left:auto;
+	margin-right:auto;
+	border-radius:10%;
+}
+#shape span{
+	vertical-align: middle;
+	position:relative;
+	top:35%;
+	font-size:14pt;
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Contrast Calculator</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body style="background-color:white; padding-top:2em;">
+
+<h1>Contrast Calculator</h1>
+
+<label class="background">
+	<input id="background" placeholder="background"/>
+</label>
+
+<label class="foreground">
+	<input id="foreground" placeholder="content"/>
+</label>
+
+<output tabindex="0">
+	<strong>?</strong>
+	<span class="error"></span>
+</output>
+<section id="results">
+</section>
+
+<section class="color-display" id="backgroundDisplay">
+	<h2>Preview</h2>
+	<p id="px28">This is 28pt font    <strong>bold font</strong></p>
+	<p id="px24">This is 24pt font    <strong>bold font</strong></p>
+	<p id="px20">This is 20pt font    <strong>bold font</strong></p>
+	<p id="px18">This is 18pt font    <strong>bold font</strong></p>
+	<p id="px14">This is 14pt font    <strong>bold font</strong></p>
+	<p id="px12">This is 12pt font    <strong>bold font</strong></p>
+	<p id="px10">This is 10pt font    <strong>bold font</strong></p>
+	<div id="shape" style="width:100px;height:100px;"><span id="word">shape</span></div>
+</section>
+
+<section class="color-display" id="foregroundDisplay" style="display:none;">
+	<button id="swap"></button>
+</section>
+
+<footer></footer>
+
+<script src="https://leaverou.github.com/incrementable/incrementable.js" id="incrementable" async></script>
+<script src="color.js"></script>
+<script src="contrast-ratio.js"></script>
+
+<script src="https://www.google-analytics.com/ga.js" async></script>
+
+</body>
+</html>
